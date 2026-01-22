@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HydraFlora - Water pH & Plant Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background Elements -->
+    <div class="background-animation">
+        <!-- Floating Ions -->
+        <div class="ion-animation">
+            <div class="cation" style="left: 10%; animation-delay: 0s">H⁺</div>
+            <div class="cation" style="left: 30%; animation-delay: 1s">Ca²⁺</div>
+            <div class="cation" style="left: 50%; animation-delay: 2s">Mg²⁺</div>
+            <div class="anion" style="left: 70%; animation-delay: 0.5s">OH⁻</div>
+            <div class="anion" style="left: 90%; animation-delay: 1.5s">HCO₃⁻</div>
+            <div class="anion" style="left: 20%; animation-delay: 2.5s">SO₄²⁻</div>
+        </div>
+        
+        <!-- Pink Flowers -->
+        <div class="flower-animation">
+            <div class="flower" style="left: 15%; animation-delay: 0s">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="center"></div>
+            </div>
+            <div class="flower" style="left: 40%; animation-delay: 1s">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="center"></div>
+            </div>
+            <div class="flower" style="left: 65%; animation-delay: 2s">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="center"></div>
+            </div>
+            <div class="flower" style="left: 85%; animation-delay: 1.5s">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="center"></div>
+            </div>
+        </div>
+        
+        <!-- Water Bubbles -->
+        <div class="bubble-animation">
+            <div class="bubble" style="left: 20%; animation-delay: 0s"></div>
+            <div class="bubble" style="left: 50%; animation-delay: 0.7s"></div>
+            <div class="bubble" style="left: 80%; animation-delay: 1.4s"></div>
+            <div class="bubble" style="left: 30%; animation-delay: 2.1s"></div>
+            <div class="bubble" style="left: 70%; animation-delay: 2.8s"></div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-tint"></i>
+                    <div class="water-ripple"></div>
+                </div>
+                <div class="logo-text">
+                    <h1>Hydra<span>Flora</span></h1>
+                    <p class="subtitle">Water Harmony • Plant Life</p>
+                </div>
+            </div>
+            <div class="tagline-container">
+                <p class="tagline">
+                    <i class="fas fa-water"></i>
+                    Enter your water pH to discover perfect plants & smart filtration
+                    <i class="fas fa-leaf"></i>
+                </p>
+            </div>
+        </header>
+
+        <!-- pH Input Section -->
+        <section class="input-section">
+            <div class="input-card glass-card">
+                <div class="input-header">
+                    <h2><i class="fas fa-flask"></i> Enter Your Water pH</h2>
+                    <p class="instruction">Move the slider or type value (0 = Acidic, 7 = Neutral, 14 = Alkaline)</p>
+                </div>
+                
+                <div class="ph-input-area">
+                    <div class="ph-display">
+                        <div class="ph-value-container">
+                            <span class="ph-label">pH Value</span>
+                            <div class="ph-value" id="ph-value-display">7.0</div>
+                        </div>
+                        <div class="ph-status-container">
+                            <span class="ph-label">Status</span>
+                            <div class="ph-status" id="ph-status">Neutral</div>
+                        </div>
+                    </div>
+                    
+                    <div class="ph-controls">
+                        <div class="slider-container">
+                            <div class="ph-scale">
+                                <span class="acidic">Acidic 0</span>
+                                <span class="neutral">Neutral 7</span>
+                                <span class="alkaline">Alkaline 14</span>
+                            </div>
+                            <div class="slider-wrapper">
+                                <input type="range" id="ph-slider" min="0" max="14" step="0.1" value="7.0">
+                                <div class="slider-track">
+                                    <div class="slider-fill" id="slider-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="number-controls">
+                            <div class="input-group">
+                                <button class="control-btn minus" id="btn-minus">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <div class="input-wrapper">
+                                    <input type="number" id="ph-input" min="0" max="14" step="0.1" value="7.0">
+                                    <span class="input-label">pH Value</span>
+                                </div>
+                                <button class="control-btn plus" id="btn-plus">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                            
+                            <button class="analyze-btn" id="analyze-btn">
+                                <div class="btn-content">
+                                    <i class="fas fa-search"></i>
+                                    <span>Analyze & Get Recommendations</span>
+                                </div>
+                                <div class="btn-wave"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section" id="results-section">
+            <!-- Plant Recommendations -->
+            <div class="result-card glass-card" id="plants-card">
+                <div class="card-header">
+                    <div class="card-icon-bg">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="header-content">
+                        <h2><span class="number">1</span> Plant Recommendations</h2>
+                        <p class="card-subtitle">Best plants for your water pH level</p>
+                    </div>
+                </div>
+                
+                <div class="card-content">
+                    <!-- Plants based on pH -->
+                    <div class="plants-display">
+                        <div class="plant-section decorative">
+                            <div class="section-header">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-seedling"></i>
+                                </div>
+                                <h3>🌸 Decorative Plants</h3>
+                            </div>
+                            
+                            <div class="plant-list" id="decorative-plants">
+                                <!-- Filled by JavaScript -->
+                            </div>
+                            
+                            <div class="range-display">
+                                <div class="range-label">Optimal pH Range:</div>
+                                <div class="range-value" id="decorative-range">5.5–7.2</div>
+                            </div>
+                        </div>
+                        
+                        <div class="plant-section edible">
+                            <div class="section-header">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-carrot"></i>
+                                </div>
+                                <h3>🍓 Edible Plants</h3>
+                            </div>
+                            
+                            <div class="plant-list" id="edible-plants">
+                                <!-- Filled by JavaScript -->
+                            </div>
+                            
+                            <div class="range-display">
+                                <div class="range-label">Optimal pH Range:</div>
+                                <div class="range-value" id="edible-range">6.0–7.5</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Plant Health Indicator -->
+                    <div class="plant-health">
+                        <div class="health-header">
+                            <i class="fas fa-heart"></i>
+                            <h3>Plant Health Indicator</h3>
+                        </div>
+                        <div class="health-meter">
+                            <div class="meter-bar">
+                                <div class="meter-fill" id="health-fill"></div>
+                            </div>
+                            <div class="meter-labels">
+                                <span>Poor</span>
+                                <span>Fair</span>
+                                <span>Good</span>
+                                <span>Excellent</span>
+                            </div>
+                        </div>
+                        <div class="health-status" id="health-status">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Plants will thrive in this pH range</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filtration Guide -->
+            <div class="result-card glass-card" id="filtration-card">
+                <div class="card-header">
+                    <div class="card-icon-bg">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <div class="header-content">
+                        <h2><span class="number">2</span> Water Filtration Guide</h2>
+                        <p class="card-subtitle">Adjust pH with smart filtration</p>
+                    </div>
+                </div>
+                
+                <div class="card-content">
+                    <!-- pH Paper Warning -->
+                    <div class="ph-paper-warning">
+                        <div class="warning-icon">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <div class="warning-content">
+                            <h3><i class="fas fa-exclamation-triangle"></i> First: Test with pH Paper!</h3>
+                            <p>Always test your water with pH paper before and after filtration to monitor changes.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Flow Rate Display -->
+                    <div class="flow-rate-display">
+                        <div class="flow-header">
+                            <h3><i class="fas fa-tachometer-alt"></i> Recommended Drip Rate</h3>
+                            <p class="flow-subtitle">Based on your pH of <span id="current-ph-display">7.0</span></p>
+                        </div>
+                        
+                        <div class="rate-visual">
+                            <div class="drops-animation">
+                                <div class="drip-line">
+                                    <div class="drip" style="--delay: 0s"></div>
+                                    <div class="drip" style="--delay: 0.5s"></div>
+                                    <div class="drip" style="--delay: 1s"></div>
+                                    <div class="drip" style="--delay: 1.5s"></div>
+                                    <div class="drip" style="--delay: 2s"></div>
+                                </div>
+                                <div class="rate-value" id="flow-rate">10-15 drops/sec</div>
+                            </div>
+                            
+                            <div class="rate-details">
+                                <div class="detail">
+                                    <div class="detail-icon">
+                                        <i class="fas fa-water"></i>
+                                    </div>
+                                    <div class="detail-text">
+                                        <div class="detail-label">Flow Speed</div>
+                                        <div class="detail-value" id="flow-speed">1-1.5 L/hour</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="detail">
+                                    <div class="detail-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="detail-text">
+                                        <div class="detail-label">Contact Time</div>
+                                        <div class="detail-value" id="contact-time">Low</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="detail">
+                                    <div class="detail-icon">
+                                        <i class="fas fa-flask"></i>
+                                    </div>
+                                    <div class="detail-text">
+                                        <div class="detail-label">pH Adjustment</div>
+                                        <div class="detail-value" id="ph-adjust">Minimal</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Filtration Steps -->
+                    <div class="filtration-steps">
+                        <h3><i class="fas fa-list-ol"></i> Filtration Process</h3>
+                        <div class="steps-container" id="steps-container">
+                            <!-- Filled by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <!-- Filter Media -->
+                    <div class="filter-media">
+                        <h3><i class="fas fa-filter"></i> Filter Media Options</h3>
+                        <div class="media-tags" id="filter-tags">
+                            <!-- Filled by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <!-- Water Flow Animation -->
+                    <div class="water-flow-animation">
+                        <h3><i class="fas fa-water"></i> Water Flow Visualization</h3>
+                        <div class="animation-container">
+                            <div class="pipe-system">
+                                <div class="inlet">
+                                    <div class="water-in" id="water-in"></div>
+                                    <div class="ph-label">pH <span id="inlet-ph">7.0</span></div>
+                                </div>
+                                
+                                <div class="filter-tank">
+                                    <div class="filter-media-visual"></div>
+                                    <div class="dripping-water">
+                                        <div class="drip-animation" id="drip-animation"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="outlet">
+                                    <div class="water-out" id="water-out"></div>
+                                    <div class="ph-label">pH <span id="outlet-ph">7.0</span></div>
+                                </div>
+                            </div>
+                            
+                            <div class="flow-labels">
+                                <div class="label">Inlet</div>
+                                <div class="label">Filter</div>
+                                <div class="label">Outlet</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Important Note -->
+                    <div class="important-note">
+                        <div class="note-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="note-content">
+                            <h3>💡 Remember</h3>
+                            <p id="filtration-note">Slower drip rate = More contact time = Better pH adjustment. Test with pH paper after filtration!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-tint"></i>
+                    <h3>HydraFlora</h3>
+                    <p>Harmony between water and plants</p>
+                </div>
+                
+                <div class="footer-info">
+                    <p><i class="fas fa-info-circle"></i> For educational purposes. Always test your water and soil conditions.</p>
+                    <p class="copyright">© 2025 HydraFlora | Water pH Analysis System</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="fab" id="fab-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
