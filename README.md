@@ -5,8 +5,8 @@ Aquatest is a self-initiated web-based solution designed to analyze **grey water
 🔗 Live Prototype: https://aquatest-eight.vercel.app/
 
 Preview
-<img width="1917" height="1079" alt="image" src="https://github.com/user-attachments/assets/6e475f56-5f43-46b6-92d3-5378e310f524" />
-<img width="1919" height="1075" alt="image" src="https://github.com/user-attachments/assets/fc0233ce-f5b2-490f-aa0f-7b3786844494" />
+![Uploading image.png…]()
+
 
 🏆 Selected by: Top Idea of July – October 2025  - Center for Innovation, Incubation and Entrepreneurship Development (CIIED) - PSGR Krishnammal College for Women.
 
